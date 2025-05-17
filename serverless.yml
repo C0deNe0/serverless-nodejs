@@ -5,20 +5,18 @@ service: serverless-nodejs-api
 frameworkVersion: '3'
 useDotenv: true
 
-
 provider:
   name: aws
   runtime: nodejs18.x
   environment:
     DEBUG: ${env:DEBUG, 0}
     DATABASE_URL: ${env:DATABASE_URL, "fallback value"}
-  
 
 functions:
   api:
     handler: src/index.handler
     events:
-      - httpApi: "*"
+      - httpApi: '*'
 
 plugins:
   - serverless-offline

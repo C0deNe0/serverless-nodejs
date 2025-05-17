@@ -14,7 +14,7 @@ app.get("/",async (req, res, next) => {
 
   //for http- connections
   //non polling
-  neonConfig.fetchConnectionCache = true
+  neonConfig.fetchConnectionCache = true 
 
   const sql =await dbClient()
   const [result] = await sql`select now()`  //actually giving a result array
